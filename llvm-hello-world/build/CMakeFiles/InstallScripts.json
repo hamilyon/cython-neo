@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
