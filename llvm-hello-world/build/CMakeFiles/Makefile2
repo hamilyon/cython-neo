@@ -64,10 +64,12 @@ CMAKE_BINARY_DIR = /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/bui
 
 # The main recursive "all" target.
 all: CMakeFiles/llvm-hello-gen.dir/all
+all: CMakeFiles/lexer_tests.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/llvm-hello-gen.dir/codegen
+codegen: CMakeFiles/lexer_tests.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -86,6 +88,7 @@ clean: CMakeFiles/compile.dir/clean
 clean: CMakeFiles/assemble.dir/clean
 clean: CMakeFiles/link.dir/clean
 clean: CMakeFiles/build-all.dir/clean
+clean: CMakeFiles/lexer_tests.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -255,12 +258,12 @@ CMakeFiles/target_parser_gen.dir/clean:
 CMakeFiles/llvm-hello-gen.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llvm-hello-gen.dir/build.make CMakeFiles/llvm-hello-gen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llvm-hello-gen.dir/build.make CMakeFiles/llvm-hello-gen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles --progress-num=6,7 "Built target llvm-hello-gen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles --progress-num=9,10,11 "Built target llvm-hello-gen"
 .PHONY : CMakeFiles/llvm-hello-gen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/llvm-hello-gen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/llvm-hello-gen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 0
 .PHONY : CMakeFiles/llvm-hello-gen.dir/rule
@@ -272,7 +275,7 @@ llvm-hello-gen: CMakeFiles/llvm-hello-gen.dir/rule
 # codegen rule for target.
 CMakeFiles/llvm-hello-gen.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llvm-hello-gen.dir/build.make CMakeFiles/llvm-hello-gen.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles --progress-num=6,7 "Finished codegen for target llvm-hello-gen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles --progress-num=9,10,11 "Finished codegen for target llvm-hello-gen"
 .PHONY : CMakeFiles/llvm-hello-gen.dir/codegen
 
 # clean rule for target.
@@ -292,7 +295,7 @@ CMakeFiles/generate.dir/all: CMakeFiles/llvm-hello-gen.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/generate.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/generate.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 0
 .PHONY : CMakeFiles/generate.dir/rule
@@ -324,7 +327,7 @@ CMakeFiles/compile.dir/all: CMakeFiles/generate.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/compile.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/compile.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 0
 .PHONY : CMakeFiles/compile.dir/rule
@@ -356,7 +359,7 @@ CMakeFiles/assemble.dir/all: CMakeFiles/compile.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/assemble.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/assemble.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 0
 .PHONY : CMakeFiles/assemble.dir/rule
@@ -383,12 +386,12 @@ CMakeFiles/assemble.dir/clean:
 CMakeFiles/link.dir/all: CMakeFiles/assemble.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/link.dir/build.make CMakeFiles/link.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/link.dir/build.make CMakeFiles/link.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles --progress-num=5 "Built target link"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles --progress-num=8 "Built target link"
 .PHONY : CMakeFiles/link.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/link.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/link.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 0
 .PHONY : CMakeFiles/link.dir/rule
@@ -400,7 +403,7 @@ link: CMakeFiles/link.dir/rule
 # codegen rule for target.
 CMakeFiles/link.dir/codegen: CMakeFiles/assemble.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/link.dir/build.make CMakeFiles/link.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles --progress-num=5 "Finished codegen for target link"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles --progress-num=8 "Finished codegen for target link"
 .PHONY : CMakeFiles/link.dir/codegen
 
 # clean rule for target.
@@ -420,7 +423,7 @@ CMakeFiles/build-all.dir/all: CMakeFiles/link.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/build-all.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/build-all.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 0
 .PHONY : CMakeFiles/build-all.dir/rule
@@ -439,6 +442,38 @@ CMakeFiles/build-all.dir/codegen: CMakeFiles/link.dir/all
 CMakeFiles/build-all.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/build-all.dir/build.make CMakeFiles/build-all.dir/clean
 .PHONY : CMakeFiles/build-all.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/lexer_tests.dir
+
+# All Build rule for target.
+CMakeFiles/lexer_tests.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles --progress-num=5,6,7 "Built target lexer_tests"
+.PHONY : CMakeFiles/lexer_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/lexer_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/lexer_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles 0
+.PHONY : CMakeFiles/lexer_tests.dir/rule
+
+# Convenience name for target.
+lexer_tests: CMakeFiles/lexer_tests.dir/rule
+.PHONY : lexer_tests
+
+# codegen rule for target.
+CMakeFiles/lexer_tests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles --progress-num=5,6,7 "Finished codegen for target lexer_tests"
+.PHONY : CMakeFiles/lexer_tests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/lexer_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/clean
+.PHONY : CMakeFiles/lexer_tests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

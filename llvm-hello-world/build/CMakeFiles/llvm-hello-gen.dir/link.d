@@ -3,6 +3,7 @@ bin/llvm-hello-gen: \
   /usr/lib64/gcc/x86_64-suse-linux/15/../../../../lib64/crti.o \
   /usr/lib64/gcc/x86_64-suse-linux/15/crtbegin.o \
   CMakeFiles/llvm-hello-gen.dir/src/hello.cpp.o \
+  CMakeFiles/llvm-hello-gen.dir/src/lexer.cpp.o \
   /usr/lib64/libLLVM.so.21.1 \
   /usr/lib64/gcc/x86_64-suse-linux/15/libstdc++.so \
   /usr/lib64/gcc/x86_64-suse-linux/15/../../../../lib64/libm.so \
@@ -44,6 +45,8 @@ bin/llvm-hello-gen: \
 /usr/lib64/gcc/x86_64-suse-linux/15/crtbegin.o:
 
 CMakeFiles/llvm-hello-gen.dir/src/hello.cpp.o:
+
+CMakeFiles/llvm-hello-gen.dir/src/lexer.cpp.o:
 
 /usr/lib64/libLLVM.so.21.1:
 

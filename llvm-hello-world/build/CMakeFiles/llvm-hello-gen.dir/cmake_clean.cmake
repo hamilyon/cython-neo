@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/llvm-hello-gen.dir/link.d"
   "CMakeFiles/llvm-hello-gen.dir/src/hello.cpp.o"
   "CMakeFiles/llvm-hello-gen.dir/src/hello.cpp.o.d"
+  "CMakeFiles/llvm-hello-gen.dir/src/lexer.cpp.o"
+  "CMakeFiles/llvm-hello-gen.dir/src/lexer.cpp.o.d"
   "bin/llvm-hello-gen"
   "bin/llvm-hello-gen.pdb"
 )

@@ -79,4 +79,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/assemble.dir/DependInfo.cmake"
   "CMakeFiles/link.dir/DependInfo.cmake"
   "CMakeFiles/build-all.dir/DependInfo.cmake"
+  "CMakeFiles/lexer_tests.dir/DependInfo.cmake"
   )

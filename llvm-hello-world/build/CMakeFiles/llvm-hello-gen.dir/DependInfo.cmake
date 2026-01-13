@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/src/hello.cpp" "CMakeFiles/llvm-hello-gen.dir/src/hello.cpp.o" "gcc" "CMakeFiles/llvm-hello-gen.dir/src/hello.cpp.o.d"
+  "/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/src/lexer.cpp" "CMakeFiles/llvm-hello-gen.dir/src/lexer.cpp.o" "gcc" "CMakeFiles/llvm-hello-gen.dir/src/lexer.cpp.o.d"
   "" "bin/llvm-hello-gen" "gcc" "CMakeFiles/llvm-hello-gen.dir/link.d"
   )
 

@@ -15,8 +15,13 @@ add_definitions(${LLVM_DEFINITIONS})
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+enable_testing()
+
 # Create the IR generator executable
-add_executable(llvm-hello-gen src/hello.cpp)
+add_executable(llvm-hello-gen src/hello.cpp
+        src/lexer.cpp
+        src/lexer.h)
+target_include_directories(llvm-hello-gen PRIVATE src)
 
 # Link against LLVM libraries
 target_link_libraries(llvm-hello-gen LLVM)
@@ -63,3 +68,11 @@ add_custom_target(build-all
     DEPENDS link
     COMMENT "Full build complete!"
 )
+
+add_executable(lexer_tests
+        tests/lexer_tests.cpp
+        src/lexer.cpp
+        src/lexer.h)
+target_include_directories(lexer_tests PRIVATE src)
+
+add_test(NAME lexer_tests COMMAND lexer_tests)

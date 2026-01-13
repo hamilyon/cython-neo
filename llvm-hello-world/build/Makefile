@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/bui
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -259,6 +269,19 @@ build-all/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/build-all.dir/build.make CMakeFiles/build-all.dir/build
 .PHONY : build-all/fast
 
+#=============================================================================
+# Target rules for targets named lexer_tests
+
+# Build rule for target.
+lexer_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lexer_tests
+.PHONY : lexer_tests
+
+# fast build rule for target.
+lexer_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/build
+.PHONY : lexer_tests/fast
+
 src/hello.o: src/hello.cpp.o
 .PHONY : src/hello.o
 
@@ -283,6 +306,57 @@ src/hello.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/llvm-hello-gen.dir/build.make CMakeFiles/llvm-hello-gen.dir/src/hello.cpp.s
 .PHONY : src/hello.cpp.s
 
+src/lexer.o: src/lexer.cpp.o
+.PHONY : src/lexer.o
+
+# target to build an object file
+src/lexer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/llvm-hello-gen.dir/build.make CMakeFiles/llvm-hello-gen.dir/src/lexer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/src/lexer.cpp.o
+.PHONY : src/lexer.cpp.o
+
+src/lexer.i: src/lexer.cpp.i
+.PHONY : src/lexer.i
+
+# target to preprocess a source file
+src/lexer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/llvm-hello-gen.dir/build.make CMakeFiles/llvm-hello-gen.dir/src/lexer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/src/lexer.cpp.i
+.PHONY : src/lexer.cpp.i
+
+src/lexer.s: src/lexer.cpp.s
+.PHONY : src/lexer.s
+
+# target to generate assembly for a file
+src/lexer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/llvm-hello-gen.dir/build.make CMakeFiles/llvm-hello-gen.dir/src/lexer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/src/lexer.cpp.s
+.PHONY : src/lexer.cpp.s
+
+tests/lexer_tests.o: tests/lexer_tests.cpp.o
+.PHONY : tests/lexer_tests.o
+
+# target to build an object file
+tests/lexer_tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/tests/lexer_tests.cpp.o
+.PHONY : tests/lexer_tests.cpp.o
+
+tests/lexer_tests.i: tests/lexer_tests.cpp.i
+.PHONY : tests/lexer_tests.i
+
+# target to preprocess a source file
+tests/lexer_tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/tests/lexer_tests.cpp.i
+.PHONY : tests/lexer_tests.cpp.i
+
+tests/lexer_tests.s: tests/lexer_tests.cpp.s
+.PHONY : tests/lexer_tests.s
+
+# target to generate assembly for a file
+tests/lexer_tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lexer_tests.dir/build.make CMakeFiles/lexer_tests.dir/tests/lexer_tests.cpp.s
+.PHONY : tests/lexer_tests.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -291,6 +365,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... acc_gen"
 	@echo "... assemble"
 	@echo "... build-all"
@@ -301,10 +376,17 @@ help:
 	@echo "... omp_gen"
 	@echo "... target_parser_gen"
 	@echo "... vt_gen"
+	@echo "... lexer_tests"
 	@echo "... llvm-hello-gen"
 	@echo "... src/hello.o"
 	@echo "... src/hello.i"
 	@echo "... src/hello.s"
+	@echo "... src/lexer.o"
+	@echo "... src/lexer.i"
+	@echo "... src/lexer.s"
+	@echo "... tests/lexer_tests.o"
+	@echo "... tests/lexer_tests.i"
+	@echo "... tests/lexer_tests.s"
 .PHONY : help
 
 

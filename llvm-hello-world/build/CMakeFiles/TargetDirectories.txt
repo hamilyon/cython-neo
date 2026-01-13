@@ -9,5 +9,7 @@
 /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles/assemble.dir
 /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles/link.dir
 /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles/build-all.dir
+/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles/lexer_tests.dir
+/home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles/test.dir
 /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles/edit_cache.dir
 /home/ashaposhnikov/compilers/cython-neo/llvm-hello-world/build/CMakeFiles/rebuild_cache.dir
