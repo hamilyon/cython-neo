@@ -48,19 +48,27 @@ bool LexerContext::isAtEnd() const {
 
 void LexerContext::tryEmitIndentation() {
     while (!isAtEnd()) {
-        char c = peek();
-        if (c == '\n') {
+        if (char c = peek(); c == '\n') {
             advance();
             int new_indentation = 0;
             c = peek();
-            while (c == '\t') {
+            if (c == '\n') {
+                // don't advance, newline will be handled on next iteration
+                continue;
+            }
+            while (!isAtEnd() && c == '\t') {
                 advance();
                 new_indentation += 1;
                 c = peek();
             }
-            while (current_indentation_ < new_indentation ) {
-                pending_tokens_.emplace(Token{});
+            const SourceLocation loc{line_, column_};
+            while (current_indentation_ < new_indentation) {
+                pending_tokens_.emplace(Token{TokenKind::LBrace, "", loc});
                 current_indentation_ += 1;
+            }
+            while (current_indentation_ > new_indentation) {
+                pending_tokens_.emplace(Token{TokenKind::RBrace, "", loc});
+                current_indentation_ -= 1;
             }
         } else {
             break;
@@ -83,19 +91,32 @@ Token LexerContext::lexNumber() {
     return Token{TokenKind::Number, digits, loc};
 }
 
+Token LexerContext::identifierOrReservedToken(const std::string &text, SourceLocation loc) {
+    if (reservedWords) {
+        return Token{reservedWords.at(text), text, loc};
+    }
+    return Token{TokenKind::Identifier, text, loc};
+}
+
 Token LexerContext::lexIdentifier() {
     SourceLocation loc{line_, column_};
     std::string text;
     while (std::isalnum(peek()) || peek() == '_') {
         text.push_back(advance());
     }
-    return Token{TokenKind::Identifier, text, loc};
+
+    return identifierOrReservedToken(text, loc);
 }
 
 Token LexerContext::nextToken() {
+    Token pendingToken = advancePendingToken();
+    if (pendingToken.kind != TokenKind::Unknown) {
+        return pendingToken;
+    }
     tryEmitIndentation();
 
-    Token pendingToken = advancePendingToken();
+    // not sure how to do that without copy of above code
+    pendingToken = advancePendingToken();
     if (pendingToken.kind != TokenKind::Unknown) {
         return pendingToken;
     }

@@ -5,6 +5,7 @@
 #include <cstddef>
 #include <string>
 #include <queue>
+#include <map>
 
 enum class TokenKind : int {
     End = 0,
@@ -61,6 +62,9 @@ private:
     bool isAtEnd() const;
     void tryEmitIndentation();
     Token lexNumber();
+
+    Token identifierOrReservedToken(const std::string & text, SourceLocation loc);
+
     Token lexIdentifier();
     Token makeSimpleToken(TokenKind kind);
 
@@ -71,6 +75,7 @@ private:
 
     int current_indentation_ = 0;
     std::queue<Token> pending_tokens_;
+    std::map<std::string, TokenKind> reservedWords;
 };
 
 int yylex(YYSTYPE *lvalp, YYLTYPE *llocp, LexerContext &context);
